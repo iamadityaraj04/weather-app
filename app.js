@@ -33,11 +33,30 @@ app.post("/",(req,res)=>{
                 const weatherIcon=weatherData.weather[0].icon;
                 const imageURL=`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
                 res.write(`
-                <body >
-                <h1 style="text-transform:uppercase ; margin-left:50px; margin-top:50px;">${query}</h1>
-                <span style="font-size: 70px; margin-left:50px;">${temp}</span><span style="color:lightgrey ; font-size: 70px;">  &#8451</span><br>
-                <img src="${imageURL}" width="100px" style="margin-left:50px;">
-                <h1 style="text-transform:uppercase ; margin-left:50px;">${weatherDes}</h1>
+                <body style="background-color:rgb(0, 119, 198);">
+                <center>
+                <div style="
+                background-color: white;
+                border:none; 
+                width: 325px; 
+                height: 450px; 
+                border-radius: 10px; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top:100px;
+                box-shadow: -1px 0px 5px 4px rgba(0,0,0,0.41);
+                -webkit-box-shadow: -1px 0px 5px 4px rgba(0,0,0,0.41);
+                -moz-box-shadow: -1px 0px 5px 4px rgba(0,0,0,0.41);
+                ">
+                <center>
+                <h1 style="text-transform:uppercase;">${query}</h1>
+                <span style="font-size: 70px;">${temp}</span><span style="color:lightgrey ; font-size: 70px;">  &#8451</span><br>
+                <img src="${imageURL}" width="100px" >
+                <h1 style="text-transform:uppercase ;">${weatherDes}</h1>
+                </center>
+                </div>
+                </center>
                 </body>
                 `);
                 res.send();   
